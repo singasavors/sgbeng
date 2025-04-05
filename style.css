@@ -131,3 +131,47 @@
         font-size: 5em;
     }
 }
+
+.offer-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 20px;
+    margin: 20px auto;
+    width: min(1000px, 95%);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.offer-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+.offer-details {
+    flex: 1;
+    font-family: 'Poppins', sans-serif;
+    padding-right: 20px;
+}
+.offer-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #25283B;
+    margin-bottom: 10px;
+}
+.offer-description {
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 15px;
+}
+.offer-amount {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #00875A;
+}
+.offer-img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
