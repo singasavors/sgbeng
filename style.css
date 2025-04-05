@@ -132,46 +132,78 @@
     }
 }
 
+@keyframes neon-glow {
+    from {
+        text-shadow: 0 0 10px white, 0 0 20px gray, 0 0 30px black;
+    }
+    to {
+        text-shadow: 0 0 25px gray, 0 0 50px black, 0 0 75px gray;
+    }
+}
+
 .offer-card {
+    position: relative;
+    background-color: rgba(51, 51, 51, 0.8);
+    color: white;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #ffffff;
-    border-radius: 16px;
-    padding: 20px;
-    margin: 20px auto;
-    width: min(1000px, 95%);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    text-decoration: none;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 .offer-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    transform: scale(1.05);
 }
+.offer-card::before {
+    content: "";
+    background: linear-gradient(
+        45deg,
+        #FF0000, #FF7300, #FFFB00, #48FF00,
+        #00FFD5, #002BFF, #FF00C8, #FF0000
+    );
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 600%;
+    z-index: -1;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    filter: blur(8px);
+    animation: glowing 20s linear infinite;
+    border-radius: 12px;
+    opacity: 1;
+}
+
 .offer-details {
-    flex: 1;
-    font-family: 'Poppins', sans-serif;
-    padding-right: 20px;
+    max-width: 70%;
 }
 .offer-title {
-    font-size: 1.5em;
+    font-size: 1.1rem;
     font-weight: bold;
-    color: #25283B;
-    margin-bottom: 10px;
+    color: white;
 }
 .offer-description {
-    font-size: 1em;
-    color: #555;
-    margin-bottom: 15px;
-}
-.offer-amount {
-    font-size: 1.2em;
-    font-weight: 600;
-    color: #00875A;
+    font-size: 0.9rem;
+    color: #ddd;
 }
 .offer-img {
-    width: 80px;
-    height: 80px;
-    object-fit: contain;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 3px solid white;
+    filter: drop-shadow(0 0 15px white);
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+.offer-img:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 30px white);
+}
+
+@keyframes glowing {
+    0% {background-position: 0 0;}
+    50% {background-position: 400% 0;}
+    100% {background-position: 0 0;}
 }
