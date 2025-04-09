@@ -2,13 +2,13 @@
 
 body { margin: 0; padding: 0; font-family: 'Poppins', sans-serif; background-color: #f0f2f5; }
 
-.banner { width: 100%; height: 100vh; text-align: center; overflow: hidden; position: relative; }
+.banner { width: 100%; height: 60vh; /* updated */ text-align: center; overflow: hidden; position: relative; }
 
-.banner .slider { position: absolute; width: 200px; height: 250px; top: 10%; left: calc(50% - 100px); transform-style: preserve-3d; transform: perspective(1000px); animation: autoRun 20s linear infinite; z-index: 2; }
+.banner .slider { position: absolute; width: 200px; height: 250px; top: 5%; /* updated */ left: calc(50% - 100px); transform-style: preserve-3d; transform: perspective(1000px); animation: autoRun 20s linear infinite; z-index: 2; }
 
 @keyframes autoRun { from { transform: perspective(1000px) rotateX(-16deg) rotateY(0deg); } to { transform: perspective(1000px) rotateX(-16deg) rotateY(360deg); } }
 
-.banner .slider .item { position: absolute; inset: 0; transform: rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)) translateZ(550px); }
+.banner .slider .item { position: absolute; inset: 0; transform: rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)) translateZ(400px); /* updated */ }
 
 .banner .slider .item img { width: 100%; height: 100%; object-fit: cover; }
 
@@ -28,27 +28,17 @@ body { margin: 0; padding: 0; font-family: 'Poppins', sans-serif; background-col
 
 .offer-amount { font-size: 1.1rem; font-weight: bold; color: #22c55e; margin-top: 10px; }
 
-.offer-img { width: 70px; height: 70px; border-radius: 50%; object-fit: cover; border: 2px solid white; }
+.offer-img { width: 60px; /* updated / height: 60px; / updated / object-fit: contain; / updated */ border-radius: 50%; border: 2px solid white; }
 
 @keyframes glowing { 0% { background-position: 0 0; } 50% { background-position: 400% 0; } 100% { background-position: 0 0; } }
 
 @media screen and (max-width: 1023px) { .banner .slider { width: 160px; height: 200px; left: calc(50% - 80px); }
 
-.banner .slider .item {
-    transform: rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)) translateZ(300px);
-}
+.banner .slider .item { transform: rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)) translateZ(300px); }
 
-.offers-container {
-    padding: 20px;
-}
-
-}
+.offers-container { padding: 20px; } }
 
 @media screen and (max-width: 767px) { .offer-card { flex-direction: column; text-align: center; width: 100%; }
 
-.offer-img {
-    margin-top: 10px;
-}
-
-}
+.offer-img { margin-top: 10px; } }
 
