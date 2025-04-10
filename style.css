@@ -1,3 +1,4 @@
+
 @import url('https://fonts.cdnfonts.com/css/ica-rubrik-black');
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto&display=swap');
 
@@ -12,32 +13,32 @@ body {
 
 .banner {
   width: 100%;
-  height: 60vh;
+  height: 55vh;
   text-align: center;
   overflow: hidden;
   position: relative;
   background: linear-gradient(to bottom right, #0a0a0a, #1f1f1f);
+  margin-bottom: 100px;
 }
 
 .model {
   background-image: url('https://singasavors.github.io/sgbeng/model.png');
   width: 100%;
-  height: 75vh;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  background-size: auto 130%;
+  height: 70vh;
+  position: relative;
+  background-size: auto 120%;
   background-repeat: no-repeat;
   background-position: top center;
-  z-index: 0;
+  z-index: 1;
+  margin-top: -50px;
 }
 
 .banner .slider {
   position: absolute;
-  width: 200px;
-  height: 250px;
-  top: -20px;
-  left: calc(50% - 100px);
+  width: 160px;
+  height: 200px;
+  top: -30px;
+  left: calc(50% - 80px);
   transform-style: preserve-3d;
   transform: perspective(1000px);
   animation: autoRun 20s linear infinite;
@@ -70,8 +71,9 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
-  padding: 40px;
+  padding: 0px 20px 40px;
   background: black;
+  margin-top: -50px;
 }
 
 .offer-card {
@@ -80,15 +82,14 @@ body {
   border: 1px solid #ff0000;
   border-radius: 8px;
   padding: 10px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.3s ease;
-
-  margin-top: 60px;}
+}
 
 .offer-card:hover {
   background-color: black;
@@ -101,7 +102,6 @@ body {
   background-color: #eabb4c;
   color: #b20000;
 }
-
 
 .offer-details {
   max-width: 60%;
@@ -118,7 +118,8 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: gradient-shine 4s linear infinite;
-  margin-bottom: 5px;}
+  margin-bottom: 5px;
+}
 
 .offer-description {
   font-size: 0.9rem;
@@ -126,7 +127,8 @@ body {
   font-weight: 700;
   text-decoration: none;
   line-height: 1.5;
-  margin-bottom: 10px;}
+  margin-bottom: 10px;
+}
 
 .offer-amount {
   font-size: 0.9rem;
@@ -148,101 +150,4 @@ body {
   100% {
     background-position: 200% 50%;
   }
-}
-
-@media screen and (max-width: 1023px) {
-  .banner .slider {
-    width: 160px;
-    height: 200px;
-    left: calc(50% - 80px);
-  }
-
-  .banner .slider .item {
-    transform: rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)) translateZ(300px);
-  }
-
-  .offers-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  padding: 40px;
-  background: black;
-}
-
-.offer-card {
-  background-color: #b20000;
-  color: #eabb4c;
-  border: 1px solid #ff0000;
-  border-radius: 8px;
-  padding: 10px;
-  margin-bottom: 15px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.3s ease;
-
-  margin-top: 60px;}
-
-.offer-card:hover {
-  background-color: black;
-  color: #eabb4c;
-  transform: scale(1.05);
-  box-shadow: 0 0 20px #eabb4c, 0 0 40px #ff4d4d;
-}
-
-.offer-card.selected {
-  background-color: #eabb4c;
-  color: #b20000;
-}
-
-
-.offer-details {
-  max-width: 60%;
-  padding: 10px 0;
-}
-
-.offer-title {
-  font-size: 1.1rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  background: linear-gradient(90deg, #ff4d4d, #b20000, #eabb4c, #b20000, #ff4d4d);
-  background-size: 300%;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: gradient-shine 4s linear infinite;
-  margin-bottom: 5px;}
-
-.offer-description {
-  font-size: 0.9rem;
-  color: #eabb4c;
-  font-weight: 700;
-  text-decoration: none;
-  line-height: 1.5;
-  margin-bottom: 10px;}
-
-.offer-amount {
-  font-size: 0.9rem;
-  font-weight: bold;
-  color: #eabb4c;
-}
-
-.offer-img {
-  width: 70px;
-  height: 70px;
-  border-radius: 20px;
-}
-
-/* Gradient Shine Animation */
-@keyframes gradient-shine {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 200% 50%;
-  }
-}
 }
