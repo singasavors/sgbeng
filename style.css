@@ -1,12 +1,12 @@
 @import url('https://fonts.cdnfonts.com/css/ica-rubrik-black'); @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto&display=swap');
 
-body { margin: 0; padding: 0; font-family: 'Roboto', sans-serif; background-color: #f0f0f5; /* reverted from black */ }
+body { margin: 0; padding: 0; font-family: 'Roboto', sans-serif; background-color: #0a0a0a; color: #eee; }
 
-.banner { width: 100%; height: 60vh; text-align: center; overflow: hidden; position: relative; background: linear-gradient(to bottom right, #ffffff, #dbe6f3); }
+.banner { width: 100%; height: 60vh; text-align: center; overflow: hidden; position: relative; background: linear-gradient(to bottom right, #0a0a0a, #1f1f1f); }
 
-.model { background-image: url('https://singasavors.github.io/sgbeng/model.png'); width: 100%; height: 75vh; position: absolute; bottom: 0; left: 0; background-size: auto 130%; background-repeat: no-repeat; background-position: top center; z-index: 0; /* moved behind slider */ }
+.model { background-image: url('https://singasavors.github.io/sgbeng/model.png'); width: 100%; height: 75vh; position: absolute; bottom: 0; left: 0; background-size: auto 130%; background-repeat: no-repeat; background-position: top center; z-index: 0; }
 
-.banner .slider { position: absolute; width: 200px; height: 250px; top: 5%; left: calc(50% - 100px); transform-style: preserve-3d; transform: perspective(1000px); animation: autoRun 20s linear infinite; z-index: 2; /* in front of model */ }
+.banner .slider { position: absolute; width: 200px; height: 250px; top: 5%; left: calc(50% - 100px); transform-style: preserve-3d; transform: perspective(1000px); animation: autoRun 20s linear infinite; z-index: 2; }
 
 @keyframes autoRun { from { transform: perspective(1000px) rotateX(-16deg) rotateY(0deg); } to { transform: perspective(1000px) rotateX(-16deg) rotateY(360deg); } }
 
@@ -14,21 +14,21 @@ body { margin: 0; padding: 0; font-family: 'Roboto', sans-serif; background-colo
 
 .banner .slider .item img { width: 100%; height: 100%; object-fit: cover; }
 
-.offers-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 40px; background: #f7f9fb; }
+.offers-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 40px; background: #111; }
 
-.offer-card { position: relative; background: #fff; color: #222; border-radius: 16px; padding: 20px 15px; width: 300px; min-height: 180px; display: flex; align-items: center; cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease; overflow: hidden; border: 1px solid #ddd; box-shadow: 0 4px 15px rgba(0,0,0,0.08); }
+.offer-card { position: relative; background: #1c1c1c; color: #eee; border-radius: 16px; padding: 20px 15px; width: 300px; min-height: 180px; display: flex; align-items: center; cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease; overflow: hidden; border: 1px solid #333; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
 
-.offer-card:hover { transform: scale(1.02); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+.offer-card:hover { transform: scale(1.02); box-shadow: 0 10px 25px rgba(255,255,255,0.05); }
 
 .offer-details { padding-right: 10px; flex: 1; }
 
-.offer-title { font-family: 'Orbitron', sans-serif; font-size: 1.1rem; font-weight: 700; letter-spacing: 1px; margin-bottom: 5px; color: #0066cc; }
+.offer-title { font-family: 'Orbitron', sans-serif; font-size: 1.1rem; font-weight: 700; letter-spacing: 1px; margin-bottom: 5px; color: #00ffe5; }
 
-.offer-description { font-size: 0.85rem; color: #555; margin-bottom: 10px; line-height: 1.3; background-color: #f0f4ff; padding: 10px; border-radius: 8px; box-shadow: inset 0 1px 2px rgba(0,0,0,0.05); }
+.offer-description { font-size: 0.85rem; color: #cccccc; margin-bottom: 10px; line-height: 1.4; background: linear-gradient(to right, #222, #2a2a2a); padding: 12px; border-left: 3px solid #00ffe5; border-radius: 6px; box-shadow: inset 0 1px 2px rgba(255,255,255,0.05); font-style: italic; }
 
-.offer-amount { font-family: 'Orbitron', sans-serif; font-size: 1rem; font-weight: bold; color: #008f5c; }
+.offer-amount { font-family: 'Orbitron', sans-serif; font-size: 1rem; font-weight: bold; color: #22ff88; }
 
-.offer-img { width: 55px; height: 55px; object-fit: contain; border-radius: 50%; border: 2px solid #ccc; margin-left: 10px; }
+.offer-img { width: 55px; height: 55px; object-fit: contain; border-radius: 50%; border: 2px solid #555; margin-left: 10px; background-color: #fff; }
 
 @media screen and (max-width: 1023px) { .banner .slider { width: 160px; height: 200px; left: calc(50% - 80px); } .banner .slider .item { transform: rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)) translateZ(300px); } .offers-container { padding: 20px; } }
 
