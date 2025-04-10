@@ -1,4 +1,3 @@
-
 @import url('https://fonts.cdnfonts.com/css/ica-rubrik-black');
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto&display=swap');
 
@@ -13,34 +12,32 @@ body {
 
 .banner {
   width: 100%;
-  height: 55vh;
+  height: 50vh; /* Reduced height for better compatibility */
   text-align: center;
   overflow: hidden;
   position: relative;
   background: linear-gradient(to bottom right, #0a0a0a, #1f1f1f);
-  margin-bottom: 100px;
+  margin-bottom: 3rem; /* More consistent spacing */
 }
 
 .model {
   background-image: url('https://singasavors.github.io/sgbeng/model.png');
   width: 100%;
-  height: 70vh;
-  position: relative;
-  background-size: auto 120%;
+  height: 60vh; /* Adjusted to align with banner */
+  position: absolute; /* Ensures stacking properly */
+  background-size: cover; /* Ensures full coverage */
   background-repeat: no-repeat;
-  background-position: top center;
-  z-index: 1;
-  margin-top: -50px;
+  background-position: center;
 }
 
 .banner .slider {
   position: absolute;
-  width: 160px;
-  height: 200px;
-  top: -30px;
-  left: calc(50% - 80px);
+  width: 150px;
+  height: 180px; /* Adjusted dimensions for better scaling */
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
   transform-style: preserve-3d;
-  transform: perspective(1000px);
   animation: autoRun 20s linear infinite;
   z-index: 2;
 }
@@ -57,12 +54,12 @@ body {
 .banner .slider .item {
   position: absolute;
   inset: 0;
-  transform: rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)) translateZ(400px);
+  transform: rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)) translateZ(300px);
 }
 
 .banner .slider .item img {
   width: 100%;
-  height: 100%;
+  height: auto; /* Maintain aspect ratio */
   object-fit: cover;
 }
 
@@ -70,10 +67,9 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
-  padding: 0px 20px 40px;
+  gap: 1.5rem; /* Consistent spacing */
+  padding: 2rem;
   background: black;
-  margin-top: -50px;
 }
 
 .offer-card {
@@ -81,8 +77,7 @@ body {
   color: #eabb4c;
   border: 1px solid #ff0000;
   border-radius: 8px;
-  padding: 10px;
-  margin-bottom: 10px;
+  padding: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -98,18 +93,13 @@ body {
   box-shadow: 0 0 20px #eabb4c, 0 0 40px #ff4d4d;
 }
 
-.offer-card.selected {
-  background-color: #eabb4c;
-  color: #b20000;
-}
-
 .offer-details {
-  max-width: 60%;
-  padding: 10px 0;
+  flex: 1; /* Ensures content scales uniformly */
+  padding: 0.5rem;
 }
 
 .offer-title {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 800;
   text-transform: uppercase;
   background: linear-gradient(90deg, #ff4d4d, #b20000, #eabb4c, #b20000, #ff4d4d);
@@ -118,28 +108,27 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: gradient-shine 4s linear infinite;
-  margin-bottom: 5px;
+  margin-bottom: 0.5rem;
 }
 
 .offer-description {
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: #eabb4c;
   font-weight: 700;
-  text-decoration: none;
   line-height: 1.5;
-  margin-bottom: 10px;
+  margin-bottom: 0.5rem;
 }
 
 .offer-amount {
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: bold;
   color: #eabb4c;
 }
 
 .offer-img {
-  width: 70px;
-  height: 70px;
-  border-radius: 20px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
 }
 
 /* Gradient Shine Animation */
