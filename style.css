@@ -145,3 +145,41 @@ body {
     background-position: 200% 50%;
   }
 }
+
+/* FIX: Center slider more accurately */
+.banner .slider {
+  left: 50%;
+  transform: translateX(-50%) translateZ(0);
+}
+
+/* FIX: Equalize rotation distance to balance perspective */
+.banner .slider .item {
+  transform: rotateY(calc((var(--position) - 1) * (360deg / var(--quantity)))) translateZ(280px);
+}
+
+/* FIX: Reduce space between banner and offers section */
+.banner {
+  margin-bottom: 1rem;
+}
+
+/* FIX: Add padding inside cards for better spacing */
+.offer-card {
+  padding: 1.5rem;
+}
+
+/* FIX: Increase internal spacing in card details */
+.offer-details {
+  padding: 0.5rem 1rem;
+}
+
+/* FIX: Prevent text from hugging edges */
+.offer-title,
+.offer-description,
+.offer-amount {
+  padding-right: 0.5rem;
+}
+
+/* FIX: Prevent logo image from sticking to card edge */
+.offer-img {
+  margin-left: 1rem;
+}
